@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colegio Unidad Residencial Colseguros</title>
+    <style>
+        :root {
+            --rojo: #980506;
+            --amarillo: #f7de00;
+            --vinotinto: #3e0000;
+            --blanco: #fffdff;
+            --gris-claro: #faf7f7;
+            --texto: #2b1d1d;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: Arial, sans-serif; background-color: var(--blanco); color: var(--texto); line-height: 1.6; overflow-x: hidden; }
+        
+        /* Barra superior institucional */
+        .top-bar { background-color: var(--vinotinto); color: var(--blanco); padding: 8px 20px; font-size: 0.85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+        .top-bar a { color: var(--amarillo); text-decoration: none; font-weight: bold; }
+
+        /* Navegación */
+        header { background-color: var(--blanco); border-bottom: 2px solid #eee; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; }
+        .logo-area { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-img { width: 55px; height: 55px; object-fit: contain; }
+        .logo-text h2 { color: var(--rojo); font-size: 1rem; line-height: 1.1; }
+        .logo-text span { font-size: 0.75rem; color: #635353; font-weight: bold; }
+        .nav-links { display: flex; gap: 25px; list-style: none; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--texto); font-weight: bold; font-size: 0.9rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--rojo); }
+        .btn-admision { background-color: var(--rojo); color: var(--blanco) !important; padding: 8px 18px; border-radius: 20px; }
+
+        /* Banner Hero Dinámico y Luminoso */
+        .hero {
+            position: relative;
+            background: linear-gradient(180deg, rgba(62, 0, 0, 0.65) 0%, rgba(152, 5, 6, 0.75) 100%), url('img/parque.png') no-repeat center center/cover;
+            color: var(--blanco);
+            padding: 130px 20px;
+            text-align: center;
+            overflow: hidden;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.3);
+        }
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            animation: fadeInDown 1s ease-out;
+        }
+        .hero-badge {
+            background-color: var(--amarillo);
+            color: var(--vinotinto);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .hero h1 { 
+            font-size: 3rem; 
+            margin-bottom: 20px; 
+            line-height: 1.2; 
+            text-shadow: 0 3px 6px rgba(0,0,0,0.4); 
+        }
+        .hero p { 
+            font-size: 1.2rem; 
+            margin-bottom: 35px; 
+            opacity: 0.98; 
+            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        .btn-hero { background-color: var(--amarillo); color: var(--vinotinto); padding: 15px 32px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.05rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.2s; }
+        .btn-hero:hover { transform: translateY(-2px); }
+        .btn-hero-outline { background-color: rgba(255,255,255,0.15); backdrop-filter: blur(5px); color: var(--blanco); border: 2px solid var(--blanco); padding: 15px 32px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 1.05rem; transition: background 0.2s; }
+        .btn-hero-outline:hover { background-color: rgba(255,255,255,0.3); }
+
+        /* Botón Flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        /* Clases de Animación Dinámica al hacer scroll (Salen de los lados) */
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-80px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(80px);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Secciones generales */
+        .section { padding: 70px 20px; max-width: 1100px; margin: 0 auto; }
+        .section-title { text-align: center; color: var(--rojo); font-size: 2.2rem; margin-bottom: 35px; position: relative; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background-color: var(--amarillo); margin: 10px auto 0; border-radius: 2px; }
+        
+        .historia-grid, .proyecto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; background: var(--gris-claro); padding: 40px; border-radius: 20px; margin-bottom: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
+        .historia-grid img, .proyecto-grid img { width: 100%; height: 280px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        
+        .galeria-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; text-align: center; }
+        .galeria-item { background: var(--gris-claro); padding: 15px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.04); }
+        .galeria-item img { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; margin-bottom: 12px; }
+        .galeria-item p { font-weight: bold; color: var(--vinotinto); }
+
+        /* Sección Ubicación y Contacto */
+        .contacto-section { background-color: var(--gris-claro); padding: 70px 20px; }
+        .mapa-banner { width: 100%; height: 400px; border: 0; border-radius: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); margin-bottom: 40px; }
+        .contacto-container { max-width: 1000px; margin: 0 auto; background: var(--blanco); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 40px; border-top: 6px solid var(--rojo); display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .contacto-info h3 { color: var(--rojo); margin-bottom: 15px; font-size: 1.6rem; }
+        .contacto-info p { margin-bottom: 12px; font-size: 0.95rem; }
+        .contacto-form { display: flex; flex-direction: column; gap: 15px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; font-size: 0.9rem; }
+        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem; }
+        .btn-enviar { background-color: var(--rojo); color: var(--blanco); border: none; padding: 14px; font-weight: bold; border-radius: 8px; cursor: pointer; font-size: 1rem; transition: background 0.2s; }
+        .btn-enviar:hover { background-color: var(--vinotinto); }
+        
+        footer { background-color: var(--vinotinto); color: var(--blanco); text-align: center; padding: 40px 20px; font-size: 0.9rem; }
+        footer a { color: var(--amarillo); text-decoration: none; font-weight: bold; margin: 0 10px; }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .historia-grid, .proyecto-grid, .contacto-container, .galeria-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero { padding: 80px 20px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/573228712130?text=Hola,%20me%20gustaría%20obtener%20más%20información%20sobre%20las%20admisiones%20del%20colegio." class="whatsapp-float" target="_blank" title="Escríbenos por WhatsApp">
+        💬
+    </a>
+
+    <div class="top-bar">
+        <span>📍 Calle 22 C N° 29A - 47, Unidad Residencial Colseguros, Bogotá</span>
+        <a href="https://wa.me/573228712130" target="_blank">📞 WhatsApp: 322 871 2130</a>
+    </div>
+
+    <header>
+        <div class="nav-container">
+            <a href="#inicio" class="logo-area">
+                <img src="img/logo-ucrc.png" alt="Escudo" class="logo-img">
+                <div class="logo-text">
+                    <h2>COLEGIO UNIDAD RESIDENCIAL COLSEGUROS</h2>
+                    <span>Hacia la Excelencia Académica</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#espacios">Espacios</a></li>
+                <li><a href="#contacto" class="btn-admision">Admisiones</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Preescolar y Básica Primaria • Bogotá</span>
+            <h1>Formando verdaderos campeones con excelencia académica y valores</h1>
+            <p>Un entorno seguro, rodeado de amplias zonas verdes y diseñado para el desarrollo integral y feliz de tus hijos.</p>
+            <div class="hero-buttons">
+                <a href="#contacto" class="btn-hero">Agendar Visita Guiada</a>
+                <a href="#nosotros" class="btn-hero-outline">Conoce Más</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="section">
+        <h2 class="section-title">Nuestro Legado y Trayectoria</h2>
+        <div class="historia-grid">
+            <div class="reveal-left">
+                <p>Durante 58 años, el Colegio Unidad Residencial Colseguros ha destacado como un referente de calidad en preescolar y primaria. Fomentamos el desarrollo integral, la empatía y los valores éticos en un ambiente familiar y cálido.</p>
+            </div>
+            <div class="reveal-right">
+                <img src="img/equipo.png" alt="Equipo directivo y docente">
+            </div>
+        </div>
+
+        <h2 class="section-title">Aprendizaje Práctico: Grado Quinto</h2>
+        <div class="proyecto-grid">
+            <div class="reveal-left">
+                <img src="img/ciencias.png" alt="Clase de ciencias">
+            </div>
+            <div class="reveal-right">
+                <p>En la clase de Ciencias Naturales, los estudiantes exploran el sistema nervioso mediante experiencias prácticas y observación detallada, promoviendo un pensamiento analítico y científico desde temprano.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="espacios" class="section">
+        <h2 class="section-title">Nuestros Espacios</h2>
+        <div class="galeria-grid">
+            <div class="galeria-item reveal-left">
+                <img src="img/parque.png" alt="Parque principal">
+                <p>Parque infantil principal</p>
+            </div>
+            <div class="galeria-item reveal-right" style="transition-delay: 0.2s;">
+                <img src="img/parque2.png" alt="Zonas verdes">
+                <p>Zonas verdes y recreación</p>
+            </div>
+            <div class="galeria-item reveal-right" style="transition-delay: 0.4s;">
+                <img src="img/pasillos.png" alt="Pasillos">
+                <p>Pasillos y salones</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contacto-section">
+        <h2 class="section-title">Ubicación y contacto</h2>
+        
+        <iframe class="mapa-banner reveal-left" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.657579178453!2d-74.084755!3d4.611111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9907b0c79f9f%3A0x6b7774e1e8783e0!2sCl.%2022c%20%2329a-47%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1699999999999!5m2!1ses!2sco" allowfullscreen="" loading="lazy"></iframe>
+
+        <div class="contacto-container reveal-right">
+            <div class="contacto-info">
+                <h3>Contáctanos</h3>
+                <p>Ven a recorrer nuestras instalaciones con tu familia y conoce de cerca nuestro proyecto educativo.</p>
+                <p style="margin-top: 15px;"><strong>📞 Teléfono:</strong> 601 269 8471</p>
+                <p><strong>💬 WhatsApp:</strong> 322 871 2130</p>
+                <p><strong>📍 Dirección:</strong> Calle 22 C N° 29A - 47, Localidad Los Mártires, Bogotá</p>
+            </div>
+            <form class="contacto-form" onsubmit="event.preventDefault(); alert('¡Gracias! Hemos recibido tu solicitud de visita.');">
+                <h3 style="color: var(--vinotinto); font-size: 1.3rem;">Envíanos tu consulta</h3>
+                <div class="form-group">
+                    <label>Nombre del acudiente</label>
+                    <input type="text" required placeholder="Tu nombre">
+                </div>
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <input type="tel" required placeholder="Tu teléfono">
+                </div>
+                <div class="form-group">
+                    <label>Grado de interés</label>
+                    <select required>
+                        <option value="">Selecciona...</option>
+                        <option value="Preescolar">Preescolar</option>
+                        <option value="Primaria">Básica Primaria</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-enviar">Enviar Consulta</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>COLEGIO UNIDAD RESIDENCIAL COLSEGUROS</strong></p>
+        <p>Hacia la Excelencia Académica • Preescolar y Primaria</p>
+        <p style="margin: 15px 0;">
+            <a href="https://www.facebook.com/colegiourc/?locale=es_LA" target="_blank">Facebook</a> | 
+            <a href="https://www.instagram.com/colegio_urc/" target="_blank">Instagram</a>
+        </p>
+        <p style="font-size: 0.8rem; opacity: 0.8;">Calle 22 C N° 29A - 47, Bogotá D.C.</p>
+    </footer>
+
+    <!-- Script de JavaScript para activar las animaciones al hacer scroll -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('reveal-active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-left, .reveal-right').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+
+</body>
+</html>

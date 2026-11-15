@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colegio Unidad Residencial Colseguros - Preescolar y Primaria en Bogotá</title>
+    <!-- Tipografías amigables y limpias -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Barra Superior de Contacto Rápido -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span>📍 Calle 22 C N° 29A - 47 (Unidad Residencial Colseguros), Bogotá D.C.</span>
+            <a href="tel:+573228712130" class="top-phone">📞 WhatsApp Admisiones: <strong>322 871 2130</strong></a>
+        </div>
+    </div>
+
+    <!-- Navegación Principal -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="brand">
+                <!-- Reemplaza el src con la ruta de tu logo recortado (ej. img/logo-ucrc.png) -->
+                <div class="logo-placeholder">UCRC</div>
+                <div class="brand-text">
+                    <span class="brand-title">COLEGIO UCRC</span>
+                    <span class="brand-subtitle">Unidad Residencial Colseguros</span>
+                </div>
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#inicio">Inicio</a>
+                <a href="#propuesta">Propuesta Educativa</a>
+                <a href="#niveles">Niveles</a>
+                <a href="#instalaciones">Instalaciones</a>
+                <a href="#contacto" class="btn-admisiones">Admisiones</a>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section (Banner Principal) -->
+    <section id="inicio" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <span class="badge-amarillo">PREESCOLAR Y PRIMARIA EN BOGOTÁ</span>
+                <h1>Formamos niños felices con excelencia académica y valores</h1>
+                <p>Un entorno seguro, tranquilo y rodeado de zonas verdes al interior de la Unidad Residencial Colseguros (Localidad Los Mártires), diseñado para potenciar el aprendizaje de tus hijos.</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn-primary">Agendar Visita Guiada</a>
+                    <a href="#propuesta" class="btn-secondary">Conoce el Colegio</a>
+                </div>
+            </div>
+            <div class="hero-image-card">
+                <!-- Reemplaza con la foto de los estudiantes en la entrada del colegio -->
+                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80" alt="Estudiantes Colegio UCRC">
+                <div class="floating-tag">
+                    <strong>Matrículas Abiertas</strong>
+                    <span>Preescolar y Básica Primaria</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pilares / Diferenciales -->
+    <section id="propuesta" class="pilares">
+        <div class="container">
+            <div class="section-header">
+                <h2>¿Por qué elegir nuestro colegio?</h2>
+                <p>Combinamos calidez humana, seguridad residencial y espacios adecuados para cada etapa.</p>
+            </div>
+
+            <div class="pilares-grid">
+                <article class="pilar-card">
+                    <div class="pilar-icon">🌳</div>
+                    <h3>Zonas Verdes</h3>
+                    <p>Espacios seguros, tranquilos y agradables al aire libre para el juego, la recreación y el contacto con la naturaleza.</p>
+                </article>
+
+                <article class="pilar-card destacado">
+                    <div class="pilar-icon">🛡️</div>
+                    <h3>Más Seguridad</h3>
+                    <p>Ubicados estratégicamente al interior de la Unidad Residencial Colseguros, brindando tranquilidad total a las familias.</p>
+                </article>
+
+                <article class="pilar-card">
+                    <div class="pilar-icon">🏫</div>
+                    <h3>Salones Amplios</h3>
+                    <p>Aulas amplias, ventiladas e iluminadas naturalmente, pensadas para el aprendizaje activo y el bienestar infantil.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Niveles Académicos -->
+    <section id="niveles" class="niveles">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestros Niveles Educativos</h2>
+                <p>Acompañamos los primeros pasos escolares con atención personalizada.</p>
+            </div>
+
+            <div class="niveles-grid">
+                <div class="nivel-card">
+                    <div class="nivel-header bg-rojo">
+                        <h3>Preescolar</h3>
+                        <span>Párvulos • Prejardín • Jardín • Transición</span>
+                    </div>
+                    <div class="nivel-body">
+                        <p>Estimulación temprana, desarrollo socioemocional, iniciación al bilingüismo y aprendizaje basado en el juego y la exploración.</p>
+                        <ul>
+                            <li>✔ Grupos pequeños y atención cercana</li>
+                            <li>✔ Desarrollo motriz y artístico</li>
+                            <li>✔ Adaptación escolar afectiva</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="nivel-card">
+                    <div class="nivel-header bg-vinotinto">
+                        <h3>Básica Primaria</h3>
+                        <span>Grados 1° a 5°</span>
+                    </div>
+                    <div class="nivel-body">
+                        <p>Bases sólidas en lectoescritura, pensamiento lógico-matemático, ciencias, inglés y formación ciudadana hacia la excelencia académica.</p>
+                        <ul>
+                            <li>✔ Acompañamiento académico continuo</li>
+                            <li>✔ Actividades deportivas y recreativas</li>
+                            <li>✔ Formación integral en valores</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería / Vida Escolar -->
+    <section id="instalaciones" class="galeria">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestros Espacios</h2>
+                <p>Conoce los lugares donde nuestros estudiantes aprenden y comparten cada día.</p>
+            </div>
+
+            <div class="galeria-grid">
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&q=80" alt="Salones amplios e iluminados">
+                    <div class="galeria-caption">Salones Amplios e Iluminados</div>
+                </div>
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1564429238817-39f842487155?auto=format&fit=crop&w=600&q=80" alt="Parques y zonas verdes">
+                    <div class="galeria-caption">Parques Infantiles y Zonas Verdes</div>
+                </div>
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80" alt="Canchas deportivas">
+                    <div class="galeria-caption">Canchas Múltiples y Recreación</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto y Visita Guiada -->
+    <section id="contacto" class="contacto">
+        <div class="container contacto-grid">
+            <div class="contacto-info">
+                <span class="badge-amarillo">PROCESO DE ADMISIONES</span>
+                <h2>Agenda tu visita guiada</h2>
+                <p>Ven con tu familia a recorrer nuestras instalaciones y conoce de cerca nuestro proyecto educativo "Hacia la Excelencia Académica".</p>
+                
+                <div class="datos-lista">
+                    <div class="dato-item">
+                        <span class="dato-icono">📞</span>
+                        <div>
+                            <strong>Teléfonos de Contacto:</strong>
+                            <p>Fijo: <a href="tel:6012698471" style="color: var(--amarillo-dorado);">601 269 8471</a><br>
+                            WhatsApp: <a href="https://wa.me/573228712130" target="_blank" style="color: var(--amarillo-dorado);">322 871 2130</a></p>
+                        </div>
+                    </div>
+                    <div class="dato-item">
+                        <span class="dato-icono">📍</span>
+                        <div>
+                            <strong>Ubicación:</strong>
+                            <p>Calle 22 C N° 29A - 47<br>Unidad Residencial Colseguros, Localidad Los Mártires, Bogotá D.C.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contacto-form" id="formVisita">
+                <h3>Solicita información</h3>
+                <div class="form-group">
+                    <label for="nombre">Nombre del acudiente</label>
+                    <input type="text" id="nombre" required placeholder="Ej. Camila Pérez">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono de contacto</label>
+                    <input type="tel" id="telefono" required placeholder="Ej. 300 123 4567">
+                </div>
+                <div class="form-group">
+                    <label for="grado">Grado de interés</label>
+                    <select id="grado" required>
+                        <option value="">Selecciona una opción...</option>
+                        <option value="Preescolar">Preescolar (Párvulos a Transición)</option>
+                        <option value="Primaria">Básica Primaria (1° a 5°)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary full-width">Enviar Solicitud</button>
+                <p id="formMensaje" class="form-feedback"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div>
+                <h4>COLEGIO UNIDAD RESIDENCIAL COLSEGUROS</h4>
+                <p>Hacia la Excelencia Académica • Preescolar y Primaria</p>
+            </div>
+            <div>
+                <p>Calle 22 C N° 29A - 47 - Los Mártires, Bogotá D.C.</p>
+                <p>Tel: 601 269 8471 | Cel/WhatsApp: 322 871 2130</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menú móvil responsive
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Simulación de envío de formulario
+        const formVisita = document.getElementById('formVisita');
+        const formMensaje = document.getElementById('formMensaje');
+
+        formVisita.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            formMensaje.textContent = `¡Gracias ${nombre}! Hemos recibido tu solicitud. Pronto nos comunicaremos contigo al teléfono registrado.`;
+            formVisita.reset();
+        });
+    </script>
+</body>
+</html>
